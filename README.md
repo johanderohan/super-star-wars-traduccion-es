@@ -13,7 +13,7 @@ copia para aplicarlo. Se hace **desde el inglés** de la versión estadounidense
 
 ## Estado
 
-Última versión: **v1.0**. Estado: **en revisión**.
+Última versión: **[v1.1 — signos de interrogación y tildes](../../releases/tag/v1.1)**. Estado: **en revisión**.
 
 | Parte | Estado |
 |---|---|
@@ -22,7 +22,7 @@ copia para aplicarlo. Se hace **desde el inglés** de la versión estadounidense
 | Pantalla de selección de héroe (rótulos dentro de la imagen) | Traducida |
 | Frase «Hace mucho tiempo…» y crawl de apertura | Redibujados en castellano |
 | Diálogos de las escenas de historia, mensaje final y créditos | Traducidos |
-| Caracteres españoles | **á é í ó ú ñ Á É Í Ó Ú Ñ ¡** (ver «Limitaciones») |
+| Caracteres españoles | **Á É Í Ó Ú Ñ ¡ ¿ ?** en todas las pantallas (ver «Limitaciones») |
 | Revisión durante una partida | Parcial |
 
 El texto del juego va casi todo en **mayúsculas** (la fuente original solo las tiene). El parche
@@ -37,15 +37,13 @@ póster del título. Para entender la historia y jugar no hacen falta.
 ### Limitaciones conocidas
 
 - **Tildes en mayúsculas**: la fuente mide 7 píxeles de alto y la tilde se dibuja en la fila de
-  arriba; donde no hay una fila libre encima (nombres de fase, HUD, avisos y nombres de jefe, que
-  son una sola línea) las mayúsculas van **sin tilde**, como en el original.
-- La fuente no tiene `?` ni `¿`: no se usan (el crawl y los diálogos no los necesitan).
+  arriba. Donde el juego no deja esa fila libre (nombres de fase, marcador, armas y nombres de jefe)
+  se ha **reformulado** el texto para que no haga falta tilde (por ejemplo «PISTOLA» en vez de
+  «BLÁSTER», «AERODESLIZADOR DE COMBATE», «OPCIONES DE JUEGO»), en lugar de dejar faltas.
 - Por anchura se usan «TIRO» y «SEGUIR» (en vez de «DISPARO» y «CONTINUAR»), «SABLE DE SALUD»,
   «BANDA SONORA» y «QUE LA FUERZA SEA CONTIGO».
 - Algunas líneas de crawl y de diálogos quedan **justificadas con huecos** grandes, como en el original.
-- «GUERRAS CLÓNICAS» (escena de Leia) está escrito de memoria del doblaje español de 1977 y no se
-  ha podido contrastar con una fuente; el rótulo «TURBO» sustituye a «JETS» (la barra de la fase
-  del deslizador) por contexto.
+- El rótulo «TURBO» sustituye a «JETS» (la barra de impulso de la fase del deslizador).
 
 ### Qué se ha comprobado
 
@@ -57,9 +55,14 @@ ejecutando el **código real del juego** para pasar de nivel desde un estado de 
 la secuencia de escenas es idéntica a la del original en todas las fases válidas y no hay pantallas
 negras ni gráficos corruptos.
 
-**No se ha probado**: una partida completa, la pantalla de bonificaciones de fin de nivel, el mensaje
-«¡BUEN DISPARO, CHICO!» y el final real (solo revisión estática de sus pantallas), guardar/cargar (el
-juego no guarda partidas), consola real ni flashcart. La redacción y las revisiones están hechas con
+En v1.1 se ha visto además en juego real el nombre del primer jefe y, por el código real del juego,
+el final de los créditos. Los avisos y los nombres de jefe se han comprobado forzando sus variables;
+la pantalla final de puntuación, solo de forma indirecta (sus tildes, y los signos «¿?» sobre el mismo
+fondo y con la misma fuente que los créditos).
+
+**No se ha probado**: una partida completa, la pantalla de bonificaciones de fin de nivel y el mensaje
+«¡BUEN DISPARO, CHICO!» (solo revisión estática de sus pantallas), guardar/cargar (el juego no guarda
+partidas), consola real ni flashcart. La redacción y las revisiones están hechas con
 asistencia de IA, **sin revisión humana independiente**. No se han probado las ediciones Rev 1, europea
 ni japonesa.
 
@@ -87,15 +90,27 @@ ni japonesa.
    el parche fallará o dará un resultado corrupto.
 4. Aplica el parche con una de estas herramientas:
    - **Windows**: [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher/releases)
-   - **Linux / macOS**: `xdelta3 -d -s "Super Star Wars (USA).sfc" super-star-wars-snes-es-v1.0.xdelta "Super Star Wars (Castellano).sfc"`
+   - **Linux / macOS**: `xdelta3 -d -s "Super Star Wars (USA).sfc" super-star-wars-snes-es-v1.1.xdelta "Super Star Wars (Castellano).sfc"`
 5. Comprueba que la ROM resultante mide **2.097.152 bytes** (2 MiB) y que su MD5 es
-   **`09949b13bf028774aa52393a1fdb0618`**.
+   **`a5d737a0c49f1594363bf916644e0c02`** (v1.1).
 6. Carga la ROM resultante en tu emulador o flashcart. **Necesitas un emulador o flashcart que admita
    ROM de 16 Mbit**: el parche amplía la ROM de 1 a 2 MiB para alojar los gráficos y textos nuevos.
 
 Aplica cada versión sobre la **ROM USA original**, no sobre una ROM ya traducida.
 
 ## Cambios por versión
+
+### v1.1 — signos de interrogación y tildes
+
+- La fuente gana **«¿» y «?»**: las preguntas se escriben ya como preguntas («DIME, JOVEN LUKE,
+  ¿QUÉ TE TRAE TAN LEJOS?», «¿TE ATREVES EN MODO VALIENTE?», «¿NECESITAS AYUDA?»).
+- Los avisos, opciones y mensajes finales dibujan ya las tildes y los signos de apertura
+  («ESTÉREO», «FÁCIL», «DETONADOR TÉRMICO», «PUNTUACIÓN», «¡PUNTOS X2!»).
+- Donde el juego no deja sitio para la tilde se reformula en vez de dejar la falta («OPCIONES DE
+  JUEGO», «CENTRO DEL RAYO TRACTOR», «PISTOLA», «AERODESLIZADOR DE COMBATE», «JEFE DE GUARDIAS DEL
+  CALABOZO», «POTENCIA DEL RAYO TRACTOR»).
+- Diálogos con la misma sangría en todos los párrafos; «Guerras Clon» como en España;
+  «la princesa Leia» en minúscula en el crawl.
 
 ### v1.0 — primera versión
 

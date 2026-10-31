@@ -2,6 +2,8 @@
 
 [![Invítame a un café en Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/johanderohan)
 
+Ficha del proyecto, capturas y más traducciones al castellano en **[Parches en Castellano](https://parchesencastellano.com/traducciones/super-nintendo/super-star-wars)**.
+
 Traducción al **español de España** de *Super Star Wars* (Super Nintendo, 1992), el
 juego de acción y plataformas de LucasArts y Sculptured Software basado en la primera
 película de la saga, que nunca salió en español.

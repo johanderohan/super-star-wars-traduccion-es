@@ -1,0 +1,11 @@
+# Nunca subir el juego ni nada derivado de su contenido
+*.sfc
+*.smc
+*.fig
+*.swc
+*.zip
+*.7z
+*.rar
+build*/
+trabajo/
+original/
